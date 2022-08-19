@@ -1,0 +1,137 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  background: hsl(204deg, 86%, 53%);
+}
+.container h1 {
+  text-align: center;
+}
+.container .journal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+@media (min-width: 992px) {
+  .container .journal {
+    flex-direction: row;
+  }
+}
+.container .journal h2 {
+  text-align: center;
+}
+.container .journal .thoughts-container, .container .journal .task-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid hsl(0deg, 0%, 100%);
+}
+@media (min-width: 768px) {
+  .container .journal .thoughts-container, .container .journal .task-container {
+    padding: 40px;
+  }
+}
+.container .journal .thoughts-container form, .container .journal .task-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .container .journal .thoughts-container form, .container .journal .task-container form {
+    flex-direction: row;
+  }
+}
+.container .journal .thoughts-container form input, .container .journal .task-container form input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+.container .journal .thoughts-container form #thoughts-btn, .container .journal .thoughts-container form #task-btn, .container .journal .task-container form #thoughts-btn, .container .journal .task-container form #task-btn {
+  color: hsl(0deg, 0%, 100%);
+  background: hsla(0deg, 0%, 0%, 0.5);
+}
+.container .journal .thoughts-container form #thoughts-btn:hover, .container .journal .thoughts-container form #task-btn:hover, .container .journal .task-container form #thoughts-btn:hover, .container .journal .task-container form #task-btn:hover {
+  background: hsl(0deg, 0%, 0%);
+  cursor: pointer;
+}
+.container .journal .thoughts-container form #thoughts-btn:active, .container .journal .thoughts-container form #task-btn:active, .container .journal .task-container form #thoughts-btn:active, .container .journal .task-container form #task-btn:active {
+  background: hsla(0deg, 0%, 0%, 0.5);
+}
+.container .journal .thoughts-container form #thoughts, .container .journal .thoughts-container form #task, .container .journal .task-container form #thoughts, .container .journal .task-container form #task {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .container .journal .thoughts-container form #thoughts, .container .journal .thoughts-container form #task, .container .journal .task-container form #thoughts, .container .journal .task-container form #task {
+    width: 65%;
+  }
+}
+.container .journal .thoughts-container .display, .container .journal .task-container .display {
+  background: hsl(0deg, 0%, 91%);
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+}
+.container .journal .thoughts-container .display h3, .container .journal .task-container .display h3 {
+  text-align: left;
+  margin-bottom: 10px;
+}
+.container .journal .thoughts-container .display .thought-list, .container .journal .task-container .display .thought-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  background: hsl(0deg, 0%, 100%);
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+@media (min-width: 992px) {
+  .container .journal .thoughts-container .display .thought-list, .container .journal .task-container .display .thought-list {
+    gap: 30px;
+  }
+}
+.container .journal .thoughts-container .display .thought-list .list, .container .journal .task-container .display .thought-list .list {
+  width: 100%;
+  text-align: left;
+}
+.container .journal .thoughts-container .display .thought-list .btn-container, .container .journal .task-container .display .thought-list .btn-container {
+  display: flex;
+  gap: 10px;
+}
+.container .journal .thoughts-container .display .thought-list .btn-container button, .container .journal .task-container .display .thought-list .btn-container button {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background: hsla(0deg, 0%, 0%, 0.7);
+  color: hsl(0deg, 0%, 100%);
+}
+.container .journal .thoughts-container .display .thought-list .btn-container button:hover, .container .journal .task-container .display .thought-list .btn-container button:hover {
+  background: hsl(0deg, 0%, 0%);
+  cursor: pointer;
+}
+.container .journal .thoughts-container .display .thought-list .btn-container button:active, .container .journal .task-container .display .thought-list .btn-container button:active {
+  background: hsla(0deg, 0%, 0%, 0.7);
+}
+
+/*# sourceMappingURL=styles.css.map */
