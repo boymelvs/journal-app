@@ -20,7 +20,7 @@ const Form = ({ add }) => {
    return (
       <>
          <form action="" onSubmit={onFormSubmit}>
-            <input type="date" name="date" id="date" value={todayDate} onChange={(e) => setTodayDate(e.target.value)} min="2020-01-01" max="2050-12-31" />
+            <input type="date" name="date" id="date" value={todayDate} onChange={(e) => setTodayDate(e.target.value)} min="2022-01-01" max="2050-12-31" />
 
             <input type="text" name="thoughts" id="thoughts" placeholder="How are you today?" value={value} onChange={(e) => setValue(e.target.value)} ref={input} />
 

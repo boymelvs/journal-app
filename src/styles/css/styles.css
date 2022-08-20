@@ -69,11 +69,20 @@
 }
 .container .journal .thoughts-container form input, .container .journal .task-container form input {
   padding: 10px;
-  border: none;
-  border-radius: 5px;
   outline: none;
+  border-radius: 5px;
+  border: none;
+}
+.container .journal .thoughts-container form #thoughts, .container .journal .task-container form #thoughts {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .container .journal .thoughts-container form #thoughts, .container .journal .task-container form #thoughts {
+    width: 65%;
+  }
 }
 .container .journal .thoughts-container form #submit-btn, .container .journal .task-container form #submit-btn {
+  padding: 10px 15px;
   color: hsl(0deg, 0%, 100%);
   background: hsla(0deg, 0%, 0%, 0.5);
 }
@@ -83,14 +92,6 @@
 }
 .container .journal .thoughts-container form #submit-btn:active, .container .journal .task-container form #submit-btn:active {
   background: hsla(0deg, 0%, 0%, 0.5);
-}
-.container .journal .thoughts-container form #thoughts, .container .journal .task-container form #thoughts {
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .container .journal .thoughts-container form #thoughts, .container .journal .task-container form #thoughts {
-    width: 67%;
-  }
 }
 .container .journal .thoughts-container .display, .container .journal .task-container .display {
   background: hsl(0deg, 0%, 91%);

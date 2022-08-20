@@ -21,12 +21,15 @@ function App() {
    }, [thoughts, task]);
 
    const addThoughts = (message, dates) => {
-      const newList = [...thoughts, { message, dates, isCompleted: false }];
+      const dateReverse = dates.split("-").reverse().join("-");
+
+      const newList = [...thoughts, { message, dates: dateReverse, isCompleted: false }];
       setThoughts(newList);
    };
 
    const addTask = (message, dates) => {
-      const newList = [...task, { message, dates, isCompleted: false }];
+      const dateReverse = dates.split("-").reverse().join("-");
+      const newList = [...task, { message, dates: dateReverse, isCompleted: false }];
       setTask(newList);
    };
 
