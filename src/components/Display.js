@@ -2,10 +2,12 @@ import React from "react";
 
 const Display = ({ displayMessage, completed, remove }) => {
    const result = displayMessage.map((message, index) => {
+      const ddmmyyyy = message.dates.split("-").reverse().join("-");
+
       return (
          <div className="list-container" key={index}>
             <div className="date-list-container">
-               <div className="date">{message.dates}</div>
+               <div className="date">{ddmmyyyy}</div>
 
                <div className="list" key={index} style={{ textDecoration: message.isCompleted && "line-through", color: message.isCompleted && "red" }}>
                   {message.message}

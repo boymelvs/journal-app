@@ -10,27 +10,29 @@ function App() {
    const [thoughts, setThoughts] = useState(thoughtsList);
    const [task, setTask] = useState(taskList);
 
-   // const sortedThoughts = thoughtsList.sort((a, b) => {
-   //    console.log(parseFloat(b.dates), "b.dates");
-   //    return parseFloat(b.dates) - parseFloat(a.dates);
-   // });
-
    useEffect(() => {
       localStorage.setItem("journalThoughts", JSON.stringify(thoughts));
       localStorage.setItem("journalTask", JSON.stringify(task));
    }, [thoughts, task]);
 
    const addThoughts = (message, dates) => {
-      const dateReverse = dates.split("-").reverse().join("-");
+      const newList = [...thoughts, { message, dates, isCompleted: false }];
 
-      const newList = [...thoughts, { message, dates: dateReverse, isCompleted: false }];
-      setThoughts(newList);
+      const sortedThoughts = newList.sort((a, b) => {
+         return new Date(a.dates) - new Date(b.dates);
+      });
+
+      setThoughts(sortedThoughts);
    };
 
    const addTask = (message, dates) => {
-      const dateReverse = dates.split("-").reverse().join("-");
-      const newList = [...task, { message, dates: dateReverse, isCompleted: false }];
-      setTask(newList);
+      const newList = [...task, { message, dates, isCompleted: false }];
+
+      const sortedTask = newList.sort((a, b) => {
+         return new Date(a.dates) - new Date(b.dates);
+      });
+
+      setTask(sortedTask);
    };
 
    const completed = (message, index) => {
