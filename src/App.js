@@ -37,25 +37,25 @@ function App() {
 
    const completed = (message, index) => {
       if (thoughts.every((item) => item !== message)) {
-         const newList = [...task];
-         newList[index].isCompleted = true;
-         setTask(newList);
+         const newTaskList = [...task];
+         newTaskList[index].isCompleted = true;
+         setTask(newTaskList);
       } else {
-         const newList = [...thoughts];
-         newList[index].isCompleted = true;
-         setThoughts(newList);
+         const newThoughtList = [...thoughts];
+         newThoughtList[index].isCompleted = true;
+         setThoughts(newThoughtList);
       }
    };
 
    const remove = (message, index) => {
       if (thoughts.every((item) => item !== message)) {
-         const newList = [...task];
-         newList.splice(index, 1);
-         setTask(newList);
+         const newTaskList = [...task];
+         newTaskList.splice(index, 1);
+         setTask(newTaskList);
       } else {
-         const newList = [...thoughts];
-         newList.splice(index, 1);
-         setThoughts(newList);
+         const newThoughtList = [...thoughts];
+         newThoughtList.splice(index, 1);
+         setThoughts(newThoughtList);
       }
    };
 
