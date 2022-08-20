@@ -5,9 +5,15 @@ import Display from "./components/Display";
 function App() {
    const thoughtsList = [
       { message: "Learn about React", dates: "2022-08-19", isCompleted: false },
-      { message: "Meet friend for lunch", dates: "2022-08-19", isCompleted: false },
-      { message: "Build really cool to app", dates: "2022-08-19", isCompleted: false },
+      { message: "Meet friend for lunch", dates: "2022-06-19", isCompleted: false },
+      { message: "Build really cool to app", dates: "2022-07-19", isCompleted: false },
    ];
+
+   const sorted = thoughtsList.sort((a, b) => {
+      return b.dates - a.dates;
+   });
+
+   console.log(sorted, "sorted");
 
    const taskList = [
       { message: "Learn aboutaboutabout about about React", dates: "2022-08-19", isCompleted: false },
@@ -19,12 +25,15 @@ function App() {
    const [task, setTask] = useState(taskList);
 
    const addThoughts = (message, dates) => {
-      const newList = [...thoughts, { message, dates }];
-      setThoughts(newList);
+      const newList = [...thoughts, { message, dates, isCompleted: false }];
+      const sorted = newList.sort((a, b) => {
+         return b.dates - a.dates;
+      });
+      setThoughts(sorted);
    };
 
    const addTask = (message, dates) => {
-      const newList = [...task, { message, dates }];
+      const newList = [...task, { message, dates, isCompleted: false }];
       setTask(newList);
    };
 

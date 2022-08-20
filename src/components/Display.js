@@ -13,10 +13,10 @@ const Display = ({ displayMessage, completed, remove }) => {
             </div>
 
             <div className="btn-container">
-               <button onClick={() => completed(message, index)} className="complete-btn">
-                  Complete
+               <button onClick={() => completed(message, index)} className="complete-btn" title="complete">
+                  &#10003;
                </button>
-               <button onClick={() => remove(message, index)} className="delete-btn">
+               <button onClick={() => remove(message, index)} className="delete-btn" title="remove">
                   X
                </button>
             </div>

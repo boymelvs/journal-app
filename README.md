@@ -21,7 +21,7 @@ This is about creating a journal app using reactjs.
 
 ### Links
 
--  Live Site URL: [ONLINE CALCULATOR](https://boymelvs.github.io/journal-app)
+-  Live Site URL: [JOURNAL APP](https://boymelvs.github.io/journal-app)
 
 ### Built with
 
