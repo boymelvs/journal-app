@@ -21,7 +21,7 @@ This is about creating a journal app using reactjs.
 
 ### Links
 
--  Live Site URL: [JOURNAL APP](https://boymelvs.github.io/journal-app)
+-  Live Site URL: [JOURNAL APP](https://journal-app-nu.vercel.app/)
 
 ### Built with
 
