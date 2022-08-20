@@ -27,7 +27,7 @@ const Display = ({ displayMessage, completed, remove }) => {
    return (
       <>
          <div className="display ">
-            <h3>Your todo for the day</h3>
+            <h3>Records</h3>
             {result}
          </div>
       </>

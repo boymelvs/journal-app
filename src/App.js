@@ -1,35 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Form from "./components/Form";
 import Display from "./components/Display";
 
 function App() {
-   const thoughtsList = [
-      { message: "Learn about React", dates: "2022-08-19", isCompleted: false },
-      { message: "Meet friend for lunch", dates: "2022-06-19", isCompleted: false },
-      { message: "Build really cool to app", dates: "2022-07-19", isCompleted: false },
-   ];
-
-   const sorted = thoughtsList.sort((a, b) => {
-      return b.dates - a.dates;
-   });
-
-   console.log(sorted, "sorted");
-
-   const taskList = [
-      { message: "Learn aboutaboutabout about about React", dates: "2022-08-19", isCompleted: false },
-      { message: "Meet aboutaboutab outaboutfriend for lunch", dates: "2022-08-19", isCompleted: false },
-      { message: "Build aboutaboutab outaboutreally cool to app", dates: "2022-08-19", isCompleted: false },
-   ];
-
+   const getJournalThoughts = localStorage.getItem("journalThoughts");
+   const getJournalTask = localStorage.getItem("journalTask");
+   const thoughtsList = getJournalThoughts ? JSON.parse(getJournalThoughts) : [];
+   const taskList = getJournalTask ? JSON.parse(getJournalTask) : [];
    const [thoughts, setThoughts] = useState(thoughtsList);
    const [task, setTask] = useState(taskList);
 
+   // const sortedThoughts = thoughtsList.sort((a, b) => {
+   //    console.log(parseFloat(b.dates), "b.dates");
+   //    return parseFloat(b.dates) - parseFloat(a.dates);
+   // });
+
+   useEffect(() => {
+      localStorage.setItem("journalThoughts", JSON.stringify(thoughts));
+      localStorage.setItem("journalTask", JSON.stringify(task));
+   }, [thoughts, task]);
+
    const addThoughts = (message, dates) => {
       const newList = [...thoughts, { message, dates, isCompleted: false }];
-      const sorted = newList.sort((a, b) => {
-         return b.dates - a.dates;
-      });
-      setThoughts(sorted);
+      setThoughts(newList);
    };
 
    const addTask = (message, dates) => {
