@@ -14,7 +14,10 @@
   padding: 10px;
   font-family: "Roboto", sans-serif;
   min-height: 100vh;
-  background: hsl(204deg, 86%, 53%);
+  background: hsl(0deg, 0%, 91%);
+  min-width: 320px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 .container h1 {
   text-align: center;
@@ -22,12 +25,13 @@
 .container .journal {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 60px;
+  width: 100%;
 }
 @media (min-width: 992px) {
   .container .journal {
     flex-direction: row;
+    gap: 40px;
   }
 }
 .container .journal h2 {
@@ -40,9 +44,12 @@
   gap: 20px;
   text-align: center;
   padding: 20px;
+  border-radius: 10px;
+  background: hsl(204deg, 86%, 53%);
+  border: 5px solid hsl(0deg, 0%, 100%);
   width: 100%;
-  border-radius: 5px;
-  border: 2px solid hsl(0deg, 0%, 100%);
+  height: 100%;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
 }
 @media (min-width: 768px) {
   .container .journal .thoughts-container, .container .journal .task-container {
@@ -77,12 +84,12 @@
 .container .journal .thoughts-container form #submit-btn:active, .container .journal .task-container form #submit-btn:active {
   background: hsla(0deg, 0%, 0%, 0.5);
 }
-.container .journal .thoughts-container form #thoughtTask, .container .journal .task-container form #thoughtTask {
+.container .journal .thoughts-container form #thoughts, .container .journal .task-container form #thoughts {
   width: 100%;
 }
 @media (min-width: 768px) {
-  .container .journal .thoughts-container form #thoughtTask, .container .journal .task-container form #thoughtTask {
-    width: 65%;
+  .container .journal .thoughts-container form #thoughts, .container .journal .task-container form #thoughts {
+    width: 70%;
   }
 }
 .container .journal .thoughts-container .display, .container .journal .task-container .display {

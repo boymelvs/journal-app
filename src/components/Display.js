@@ -1,20 +1,24 @@
 import React from "react";
 
-const Display = ({ thoughts }) => {
-   const result = thoughts.map((message, index) => {
+const Display = ({ displayMessage, completed, remove }) => {
+   const result = displayMessage.map((message, index) => {
       return (
          <div className="list-container" key={index}>
             <div className="date-list-container">
-               <div className="date">19-Aug-2022</div>
+               <div className="date">{message.dates}</div>
 
-               <div className="list" key={index}>
-                  {message.text}
+               <div className="list" key={index} style={{ textDecoration: message.isCompleted && "line-through", color: message.isCompleted && "red" }}>
+                  {message.message}
                </div>
             </div>
 
             <div className="btn-container">
-               <button className="complete-btn">Complete</button>
-               <button className="delete-btn">X</button>
+               <button onClick={() => completed(message, index)} className="complete-btn">
+                  Complete
+               </button>
+               <button onClick={() => remove(message, index)} className="delete-btn">
+                  X
+               </button>
             </div>
          </div>
       );
@@ -23,7 +27,7 @@ const Display = ({ thoughts }) => {
    return (
       <>
          <div className="display ">
-            <h3>Your thoughts for the day</h3>
+            <h3>Your todo for the day</h3>
             {result}
          </div>
       </>
