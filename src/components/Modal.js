@@ -7,7 +7,7 @@ const Modal = ({ remove, setShowModal, showModal }) => {
 
    const onConfirmDelete = (showModal) => {
       remove(showModal.message, showModal.index);
-      closeModal(showModal);
+      closeModal();
    };
 
    return (
