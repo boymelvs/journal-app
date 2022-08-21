@@ -3,6 +3,7 @@ import Modal from "./Modal";
 
 const Display = ({ displayMessage, completed, remove }) => {
    const [showModal, setShowModal] = useState("");
+   const [isActive, setIsActive] = useState(false);
    const [message, setMessage] = useState("");
    const [index, setIndex] = useState("");
 
@@ -10,6 +11,7 @@ const Display = ({ displayMessage, completed, remove }) => {
       setMessage(message);
       setIndex(index);
       setShowModal("active show");
+      setIsActive(true);
    };
 
    const result = displayMessage.map((message, index) => {
@@ -44,7 +46,7 @@ const Display = ({ displayMessage, completed, remove }) => {
             <h3>Records</h3>
             {result}
          </div>
-         <Modal remove={remove} message={message} index={index} setShowModal={setShowModal} showModal={showModal} />
+         {isActive && <Modal remove={remove} message={message} index={index} setShowModal={setShowModal} showModal={showModal} setIsActive={setIsActive} />}
       </>
    );
 };

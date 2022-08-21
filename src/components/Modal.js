@@ -1,8 +1,9 @@
 import React from "react";
 
-const Modal = ({ remove, message, index, setShowModal, showModal }) => {
+const Modal = ({ remove, message, index, setShowModal, showModal, setIsActive }) => {
    const closeModal = () => {
       setShowModal("");
+      setIsActive(false);
    };
 
    const onConfirmDelete = (message, index) => {

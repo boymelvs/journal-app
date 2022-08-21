@@ -168,9 +168,11 @@
   height: 100%;
   background: hsla(0deg, 0%, 0%, 0.4);
   display: none;
+  visibility: hidden;
   justify-content: center;
   align-items: center;
   animation: fadeOut 500ms ease-in-out forwards;
+  z-index: -1;
 }
 #modal-container.active {
   z-index: 100;
@@ -186,13 +188,13 @@
   gap: 40px;
   background: hsl(204deg, 86%, 53%);
   color: hsl(0deg, 0%, 91%);
-  padding: 50px;
+  padding: 40px 30px;
   border-radius: 10px;
 }
 #modal-container .modal .confirmation-btn {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 30px;
 }
 #modal-container .modal .confirmation-btn button {
   padding: 10px 20px;
@@ -222,9 +224,11 @@
   0% {
     opacity: 1;
   }
+  80% {
+    opacity: 0.5;
+  }
   100% {
     opacity: 0;
-    visibility: hidden;
   }
 }
 
