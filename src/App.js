@@ -7,6 +7,7 @@ function App() {
    const getJournalTask = localStorage.getItem("journalTask");
    const thoughtsList = getJournalThoughts ? JSON.parse(getJournalThoughts) : [];
    const taskList = getJournalTask ? JSON.parse(getJournalTask) : [];
+
    const [thoughts, setThoughts] = useState(thoughtsList);
    const [task, setTask] = useState(taskList);
 
@@ -66,13 +67,13 @@ function App() {
             <div className="thoughts-container">
                <h2>Thoughts for the Day</h2>
                <Form add={addThoughts} />
-               <Display displayMessage={thoughts} completed={completed} remove={remove} />
+               <Display displayMessages={thoughts} completed={completed} remove={remove} />
             </div>
 
             <div className="task-container">
                <h2>Task for the Day</h2>
                <Form add={addTask} />
-               <Display displayMessage={task} completed={completed} remove={remove} />
+               <Display displayMessages={task} completed={completed} remove={remove} />
             </div>
          </div>
       </div>

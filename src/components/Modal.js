@@ -1,22 +1,21 @@
 import React from "react";
 
-const Modal = ({ remove, message, index, setShowModal, showModal, setIsActive }) => {
+const Modal = ({ remove, setShowModal, showModal }) => {
    const closeModal = () => {
-      setShowModal("");
-      setIsActive(false);
+      setShowModal({ show: "", isActive: false });
    };
 
-   const onConfirmDelete = (message, index) => {
-      remove(message, index);
-      closeModal();
+   const onConfirmDelete = (showModal) => {
+      remove(showModal.message, showModal.index);
+      closeModal(showModal);
    };
 
    return (
-      <div id="modal-container" className={showModal}>
+      <div id="modal-container" className={showModal.show}>
          <div className="modal">
             <h2 className="question">Remove the record?</h2>
             <div className="confirmation-btn">
-               <button onClick={() => onConfirmDelete(message, index)} className="confirm">
+               <button onClick={() => onConfirmDelete(showModal)} className="confirm">
                   Ok
                </button>
 

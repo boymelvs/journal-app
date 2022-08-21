@@ -1,20 +1,14 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
 
-const Display = ({ displayMessage, completed, remove }) => {
-   const [showModal, setShowModal] = useState("");
-   const [isActive, setIsActive] = useState(false);
-   const [message, setMessage] = useState("");
-   const [index, setIndex] = useState("");
+const Display = ({ displayMessages, completed, remove }) => {
+   const [showModal, setShowModal] = useState({ show: "", isActive: false });
 
    const onDelete = (message, index) => {
-      setMessage(message);
-      setIndex(index);
-      setShowModal("active show");
-      setIsActive(true);
+      setShowModal({ message, index, show: "active show", isActive: true });
    };
 
-   const result = displayMessage.map((message, index) => {
+   const result = displayMessages.map((message, index) => {
       const ddmmyyyy = message.dates.split("-").reverse().join("-");
 
       return (
@@ -46,7 +40,7 @@ const Display = ({ displayMessage, completed, remove }) => {
             <h3>Records</h3>
             {result}
          </div>
-         {isActive && <Modal remove={remove} message={message} index={index} setShowModal={setShowModal} showModal={showModal} setIsActive={setIsActive} />}
+         {showModal.isActive && <Modal remove={remove} setShowModal={setShowModal} showModal={showModal} />}
       </>
    );
 };
